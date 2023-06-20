@@ -81,7 +81,7 @@ do
 
         task.spawn(function()
             while true do
-                wait(1)
+                wait()
                 update_cfgs()
             end
         end)
@@ -185,7 +185,7 @@ do
             local LagTick = 0
 
             while true do
-                wait(1/16)
+                wait()
                 LagTick = math.clamp(LagTick + 1, 0, menu.values[1].antiaim.fakelag.limit.Slider)
                 if menu.values[1].antiaim.fakelag.enabled.Toggle and menu.values[1].antiaim.fakelag["$enabled"].Active and LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") and LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Health > 0 then
                     if LagTick == (menu.values[1].antiaim.fakelag.method.Dropdown == "static" and menu.values[1].antiaim.fakelag.limit.Slider or math.random(1, menu.values[1].antiaim.fakelag.limit.Slider)) then
